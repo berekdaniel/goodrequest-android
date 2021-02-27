@@ -11,8 +11,8 @@ android {
         applicationId "com.example.goodrequest_android"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 100
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -30,6 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -41,6 +44,26 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.3'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.6.2"
+    implementation "com.squareup.okhttp3:okhttp:3.12.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.6.2"
+    implementation "com.squareup.retrofit2:adapter-rxjava:2.1.0"
+
+    //RxAndroid
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+    implementation "io.reactivex.rxjava2:rxjava:2.2.7"
+    implementation "com.jakewharton.rxbinding:rxbinding:1.0.1"
+    implementation "com.jakewharton.rxbinding:rxbinding-appcompat-v7:1.0.1"
+    implementation "android.arch.lifecycle:reactivestreams:1.1.1"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:4.11.0"
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.11.0"
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
