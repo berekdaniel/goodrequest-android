@@ -34,7 +34,7 @@ class UserActivity: AppCompatActivity() {
         binding.swipeRefresh.setOnRefreshListener {
             viewModel.fetchUser(intent.getIntExtra(KEY_USER_ID,0))
         }
-        viewModel.fetchUser(intent.getIntExtra(KEY_USER_ID,0))
+        viewModel.fetchUser(intent.getIntExtra(KEY_USER_ID,0), isDefault = true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         title = ""
     }

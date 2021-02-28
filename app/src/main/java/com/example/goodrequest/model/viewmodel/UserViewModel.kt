@@ -16,7 +16,9 @@ class UserViewModel: BaseViewModel() {
             return userMutableLiveData
         }
 
-    fun fetchUser(userId: Int) {
+    fun fetchUser(userId: Int, isDefault: Boolean = false) {
+        if(isDefault && userMutableLiveData.value != null)
+            return
         compositeSubs.add(apiService.getUser(userId)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
